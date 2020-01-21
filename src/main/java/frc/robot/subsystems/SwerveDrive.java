@@ -8,12 +8,7 @@ import frc.robot.profiling.TrapezoidProfile;
 import frc.robot.profiling.ProfileFollower;
 import frc.robot.util.*;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMax.IdleMode;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
-
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.PIDOutput;
 import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.PIDSourceType;
@@ -25,23 +20,23 @@ public class SwerveDrive extends Subsystem implements PIDSource, PIDOutput {
     private Vector2D tankVector2D;
     public final SwerveModule[] modules = new SwerveModule[] {
             // front left swerve module
-            new SwerveModule(new CANSparkMax(RobotMap.SwerveDrive.FL_DRIVE, MotorType.kBrushless),
-                    new WPI_VictorSPX(RobotMap.SwerveDrive.FL_STEER),
+            new SwerveModule(new WPI_TalonSRX(RobotMap.SwerveDrive.FL_DRIVE),
+                    new WPI_TalonSRX(RobotMap.SwerveDrive.FL_STEER),
                     new AbsoluteEncoder(RobotMap.SwerveDrive.FL_ENCODER, RobotMap.SwerveDrive.FL_ENC_OFFSET),
                     -RobotMap.SwerveDrive.WHEEL_BASE_WIDTH / 2, RobotMap.SwerveDrive.WHEEL_BASE_LENGTH / 2),
             // front right swerve module
-            new SwerveModule(new CANSparkMax(RobotMap.SwerveDrive.FR_DRIVE, MotorType.kBrushless),
-                    new WPI_VictorSPX(RobotMap.SwerveDrive.FR_STEER),
+            new SwerveModule(new WPI_TalonSRX(RobotMap.SwerveDrive.FR_DRIVE),
+                    new WPI_TalonSRX(RobotMap.SwerveDrive.FR_STEER),
                     new AbsoluteEncoder(RobotMap.SwerveDrive.FR_ENCODER, RobotMap.SwerveDrive.FR_ENC_OFFSET),
                     RobotMap.SwerveDrive.WHEEL_BASE_WIDTH / 2, RobotMap.SwerveDrive.WHEEL_BASE_LENGTH / 2),
             // back left swerve module
-            new SwerveModule(new CANSparkMax(RobotMap.SwerveDrive.BL_DRIVE, MotorType.kBrushless),
-                    new WPI_VictorSPX(RobotMap.SwerveDrive.BL_STEER),
+            new SwerveModule(new WPI_TalonSRX(RobotMap.SwerveDrive.BL_DRIVE),
+                    new WPI_TalonSRX(RobotMap.SwerveDrive.BL_STEER),
                     new AbsoluteEncoder(RobotMap.SwerveDrive.BL_ENCODER, RobotMap.SwerveDrive.BL_ENC_OFFSET),
                     -RobotMap.SwerveDrive.WHEEL_BASE_WIDTH / 2, -RobotMap.SwerveDrive.WHEEL_BASE_LENGTH / 2),
             // back right swerve module
-            new SwerveModule(new CANSparkMax(RobotMap.SwerveDrive.BR_DRIVE, MotorType.kBrushless),
-                    new WPI_VictorSPX(RobotMap.SwerveDrive.BR_STEER),
+            new SwerveModule(new WPI_TalonSRX(RobotMap.SwerveDrive.BR_DRIVE),
+                    new WPI_TalonSRX(RobotMap.SwerveDrive.BR_STEER),
                     new AbsoluteEncoder(RobotMap.SwerveDrive.BR_ENCODER, RobotMap.SwerveDrive.BR_ENC_OFFSET),
                     RobotMap.SwerveDrive.WHEEL_BASE_WIDTH / 2, -RobotMap.SwerveDrive.WHEEL_BASE_LENGTH / 2) };
     private double pivX, pivY, transAngle, mpangle, gyroangle, speed = RobotMap.SwerveDrive.SPEED,
@@ -58,13 +53,13 @@ public class SwerveDrive extends Subsystem implements PIDSource, PIDOutput {
     }
 
     public void setCoast() {
-        for (SwerveModule module : modules)
-            module.driveController.setIdleMode(IdleMode.kCoast);
+        //for (SwerveModule module : modules)
+            //module.driveController.idle
     }
 
     public void setBrake() {
-        for (SwerveModule module : modules)
-            module.driveController.setIdleMode(IdleMode.kBrake);
+        //for (SwerveModule module : modules)
+            //module.driveController.setIdleMode(IdleMode.kBrake);
     }
 
     public void debugMode() {

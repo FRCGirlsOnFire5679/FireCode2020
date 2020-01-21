@@ -1,16 +1,16 @@
 package frc.robot.commands.climb;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+// import frc.robot.Robot;
 
 public class ArmBalance extends Command {
     public ArmBalance() {
-        requires(Robot.arm);
+        //requires(Robot.arm);
     }
 
     @Override
     protected void initialize() {
-        Robot.arm.lift();
+        //Robot.arm.lift();
     }
     @Override
     protected boolean isFinished() {

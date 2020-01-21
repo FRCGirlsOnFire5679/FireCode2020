@@ -3,7 +3,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import frc.robot.util.buttons.*;
-import frc.robot.commands.auto.*;
+// import frc.robot.commands.auto.*;
 import frc.robot.commands.cargo.*;
 import frc.robot.commands.climb.*;
 import frc.robot.commands.hatch.*;

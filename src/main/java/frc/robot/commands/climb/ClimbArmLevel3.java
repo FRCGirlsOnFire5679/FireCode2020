@@ -1,21 +1,21 @@
 package frc.robot.commands.climb;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+// import frc.robot.Robot;
 
 public class ClimbArmLevel3 extends Command {
     public ClimbArmLevel3() {
-        requires(Robot.arm);
+        //requires(Robot.arm);
     }
 
     @Override
     protected void initialize() {
-        Robot.arm.prepareLevel3();
+        //Robot.arm.prepareLevel3();
     }
     
     @Override
     protected void execute() {
-        Robot.arm.prepareLevel3();
+        //Robot.arm.prepareLevel3();
     }
 
     @Override
