@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.*;
@@ -18,7 +19,7 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 public class Robot extends TimedRobot {
     public static Hatch hatch;
     public static Cargo cargo;
-    public static Elevator elevator;
+    // public static Elevator elevator;
     public static Gyro navxGyro;
     public static SwerveDrive swerve;
     // public static ClimbArm arm;
@@ -37,10 +38,11 @@ public class Robot extends TimedRobot {
     public static SendableChooser<Command> autoChooser;
 
     public void robotInit() {
+        LiveWindow.disableAllTelemetry();
         navxGyro = new Gyro();
         swerve = new SwerveDrive();
         hatch = new Hatch();
-        elevator = new Elevator();
+        // elevator = new Elevator();
         path = new PathTracking();
         follower = new PathFollower();
         cargo = new Cargo();
@@ -70,7 +72,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putNumber("yawval", yaw);
         SmartDashboard.putBoolean("tapeval", tape);
         swerve.smartDash();
-        elevator.smartDash();
+        // elevator.smartDash();
         // arm.smartDash();
         // stilt.smartDash();
         path.update();
@@ -87,7 +89,7 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
-        elevator.resetEncoder(RobotMap.Elevator.START_POSITION);
+        // elevator.resetEncoder(RobotMap.Elevator.START_POSITION);
         succ.setClosedLoopControl(false);
         succ.stop();
         navxGyro.reset();

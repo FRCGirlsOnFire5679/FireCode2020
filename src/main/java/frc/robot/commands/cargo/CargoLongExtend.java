@@ -11,7 +11,7 @@ public class CargoLongExtend extends Command {
 
     @Override
     public void execute() {
-        if (Robot.elevator.clearForCargo() && !Robot.hatch.hatchExtended)
+        // if (Robot.elevator.clearForCargo() && !Robot.hatch.hatchExtended)
             Robot.cargo.extendLong();
     }
 

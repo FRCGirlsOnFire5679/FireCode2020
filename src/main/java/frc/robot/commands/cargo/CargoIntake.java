@@ -20,7 +20,7 @@ public class CargoIntake extends Command {
             y = OI.joy2.getRawAxis(RobotMap.Controller.LT);
         else if (dir == -1)
             y = OI.joy2.getRawAxis(RobotMap.Controller.RT)*(-1);
-        if (Robot.elevator.clearForCargo() && !Robot.hatch.hatchExtended)
+        // if (Robot.elevator.clearForCargo() && !Robot.hatch.hatchExtended)
             Robot.cargo.rollIntake(y);
     }
 
