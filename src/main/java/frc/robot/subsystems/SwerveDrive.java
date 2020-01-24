@@ -28,7 +28,7 @@ public class SwerveDrive extends Subsystem implements PIDSource, PIDOutput {
             new SwerveModule(new WPI_TalonSRX(RobotMap.SwerveDrive.FR_DRIVE),
                     new WPI_TalonSRX(RobotMap.SwerveDrive.FR_STEER),
                     new AbsoluteEncoder(RobotMap.SwerveDrive.FR_ENCODER, RobotMap.SwerveDrive.FR_ENC_OFFSET),
-                    RobotMap.SwerveDrive.WHEEL_BASE_WIDTH / 2, RobotMap.SwerveDrive.WHEEL_BASE_LENGTH / 2)
+                    RobotMap.SwerveDrive.WHEEL_BASE_WIDTH / 2, RobotMap.SwerveDrive.WHEEL_BASE_LENGTH / 2),
             // back left swerve module
             new SwerveModule(new WPI_TalonSRX(RobotMap.SwerveDrive.BL_DRIVE),
                     new WPI_TalonSRX(RobotMap.SwerveDrive.BL_STEER),

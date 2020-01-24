@@ -3,6 +3,7 @@ package frc.robot.subsystems;
 import frc.robot.RobotMap;
 import frc.robot.profiling.TrapezoidProfile;
 import frc.robot.profiling.ProfileFollower;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -42,6 +43,9 @@ public class SwerveModule implements PIDSource, PIDOutput {
         steerPID.setOutputRange(-RobotMap.SwerveDrive.SWERVE_STEER_CAP, RobotMap.SwerveDrive.SWERVE_STEER_CAP);
         steerPID.setContinuous();
         steerPID.disable();
+        // we want to log out the encoder values so that we can get additional data for calibration
+        SmartDashboard.putNumber("Initial Steer Encoder Value", this.steerEncoder.getAngle());
+
         steerController.setNeutralMode(NeutralMode.Brake);
         //driveController.setIdleMode(IdleMode.kBrake);
         //driveController.setSmartCurrentLimit(30);
