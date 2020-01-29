@@ -256,11 +256,11 @@ public class SwerveDrive extends Subsystem implements PIDSource, PIDOutput {
     }
 
     public void smartDash() {
-        // SmartDashboard.putNumber("FL", modules[0].getAngle() * 360 / (2 * Math.PI));
+        SmartDashboard.putNumber("FL", modules[0].getAngle() * 360 / (2 * Math.PI));
         // SmartDashboard.putNumber("FR", modules[1].getAngle() * 360 / (2 * Math.PI));
         // SmartDashboard.putNumber("BL", modules[2].getAngle() * 360 / (2 * Math.PI));
         // SmartDashboard.putNumber("BR", modules[3].getAngle() * 360 / (2 * Math.PI));
-        // SmartDashboard.putNumber("FLDrive", modules[1].getDistance());
+        SmartDashboard.putNumber("FLDrive", modules[1].getDistance());
         // SmartDashboard.putBoolean("FieldOrient", drivingField);
         // SmartDashboard.putNumber("Gyro", Robot.navxGyro.getAngle());
         // SmartDashboard.putNumber("Pitch", Robot.navxGyro.getTilt());

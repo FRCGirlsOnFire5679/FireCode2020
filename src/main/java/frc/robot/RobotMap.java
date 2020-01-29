@@ -13,14 +13,14 @@ public class RobotMap {
         public static final double SWERVE_STEER_CAP = 1;
 
         // Swerve Motor Controller CAN ID's
-        public static final int FL_DRIVE = 9;
-        public static final int FR_DRIVE = 7;
-        public static final int BL_DRIVE = 5;
-        public static final int BR_DRIVE = 3;
-        public static final int FL_STEER = 8;
+        public static final int FL_DRIVE = 13;
+        public static final int FR_DRIVE = 2;
+        public static final int BL_DRIVE = 3;
+        public static final int BR_DRIVE = 4;
+        public static final int FL_STEER = 12;
         public static final int FR_STEER = 6;
-        public static final int BL_STEER = 4;
-        public static final int BR_STEER = 2;
+        public static final int BL_STEER = 7;
+        public static final int BR_STEER = 8;
 
         // Port which the steering encoders are plugged into
         public static final int FL_ENCODER = 0;
