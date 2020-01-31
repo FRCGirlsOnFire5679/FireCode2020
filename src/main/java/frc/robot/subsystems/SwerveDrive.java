@@ -42,7 +42,7 @@ public class SwerveDrive extends Subsystem implements PIDSource, PIDOutput {
     private double pivX, pivY, transAngle, mpangle, gyroangle, speed = RobotMap.SwerveDrive.SPEED,
             turnRate = RobotMap.SwerveDrive.TURN_RATE;
     private boolean drivingField = true, visionOn = false;
-
+    
     public SwerveDrive() {
         enable();
     }
@@ -260,7 +260,7 @@ public class SwerveDrive extends Subsystem implements PIDSource, PIDOutput {
         // SmartDashboard.putNumber("FR", modules[1].getAngle() * 360 / (2 * Math.PI));
         // SmartDashboard.putNumber("BL", modules[2].getAngle() * 360 / (2 * Math.PI));
         // SmartDashboard.putNumber("BR", modules[3].getAngle() * 360 / (2 * Math.PI));
-        SmartDashboard.putNumber("FLDrive", modules[1].getDistance());
+        SmartDashboard.putNumber("FLDrive", modules[0].getDistance());
         // SmartDashboard.putBoolean("FieldOrient", drivingField);
         // SmartDashboard.putNumber("Gyro", Robot.navxGyro.getAngle());
         // SmartDashboard.putNumber("Pitch", Robot.navxGyro.getTilt());
