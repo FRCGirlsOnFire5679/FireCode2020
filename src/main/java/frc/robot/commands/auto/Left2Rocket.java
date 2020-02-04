@@ -2,7 +2,7 @@ package frc.robot.commands.auto;
 
 import frc.robot.profiling.SwerveWaypoint;
 import frc.robot.commands.swerve.*;
-import frc.robot.RobotMap;
+// import frc.robot.RobotMap;
 // import frc.robot.commands.elevator.*;
 // import frc.robot.commands.hatch.*;
 import jaci.pathfinder.Pathfinder;

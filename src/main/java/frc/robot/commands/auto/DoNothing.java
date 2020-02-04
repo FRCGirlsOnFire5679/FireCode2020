@@ -1,6 +1,6 @@
 package frc.robot.commands.auto;
 
-import frc.robot.RobotMap;
+// import frc.robot.RobotMap;
 // import frc.robot.commands.elevator.ElevatorMM;
 // import frc.robot.commands.hatch.*;
 import edu.wpi.first.wpilibj.command.CommandGroup;

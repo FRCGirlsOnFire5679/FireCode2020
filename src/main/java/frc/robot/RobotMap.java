@@ -6,21 +6,38 @@ public class RobotMap {
     public static int DEFAULT_TIMEOUT = 30; // milliseconds
 
     public static class SwerveDrive {
+        // These numbers control the Swerve PI
         // These numbers control the Swerve PID
+        // start with p, i, d at 0, and tune as needed
+        // slowly work p value up until it oscillates about 3 times and then stops
+        // Then mess with D and then set it to 1/10 of p value (ex: p = .75, d = .075)
+        // changing weight will affect friction and therefore require more tuning
+
+        // main one we'll touch, variable with how far you are from set point
+        // farther you are from zero, the faster wheels will turn towards set point
+        // (higher p value means faster, and too high and we'll ocilate)
         public static final double SWERVE_STEER_P = 0.75;
+
+        // least used - frequently will be set to zero
+        // in non-swerve, used when slightly off from set point
+        // ramps up over time the longer you're not hitting set point
         public static final double SWERVE_STEER_I = 0;
+
+        // trickiest - directly adjusts p value - if p value is saw wave, d makes it sin wave
+        // controll oscillations, keep from overshooting. If too high, it will keep you from
+        // turning at all. This is the adjustment value after p to control oscillation
         public static final double SWERVE_STEER_D = 0.075;
         public static final double SWERVE_STEER_CAP = 1;
 
         // Swerve Motor Controller CAN ID's
-        public static final int FL_DRIVE = 9;
-        public static final int FR_DRIVE = 7;
-        public static final int BL_DRIVE = 5;
-        public static final int BR_DRIVE = 3;
-        public static final int FL_STEER = 8;
-        public static final int FR_STEER = 6;
-        public static final int BL_STEER = 4;
-        public static final int BR_STEER = 2;
+        public static final int FL_DRIVE = 7;
+        public static final int FR_DRIVE = 2;
+        public static final int BL_DRIVE = 8;
+        public static final int BR_DRIVE = 9;
+        public static final int FL_STEER = 5;
+        public static final int FR_STEER = 4;
+        public static final int BL_STEER = 6;
+        public static final int BR_STEER = 3;
 
         // Port which the steering encoders are plugged into
         public static final int FL_ENCODER = 0;
@@ -29,11 +46,10 @@ public class RobotMap {
         public static final int BR_ENCODER = 3;
         
         //Encoder offsets for real robot
-        public final static double FL_ENC_OFFSET = 183;
-        public final static double FR_ENC_OFFSET = 179;
-        public final static double BL_ENC_OFFSET = 221;
-        public final static double BR_ENC_OFFSET = 241;
-
+        public final static double FL_ENC_OFFSET = 238;
+        public final static double FR_ENC_OFFSET = 348;
+        public final static double BL_ENC_OFFSET = 235;
+        public final static double BR_ENC_OFFSET = 159;
         // public final static double FL_ENC_OFFSET = 275.5+324+42.8;
         // public final static double FR_ENC_OFFSET = 165+3.25;
         // public final static double BL_ENC_OFFSET = 142+4.5;
@@ -42,10 +58,10 @@ public class RobotMap {
         public static final boolean ENCODERS_REVERSED = false;
 
         // Cad Wheel Base information for Aries
-        public static final double WHEEL_BASE_LENGTH = 19.25;
-        public static final double WHEEL_BASE_WIDTH = 27.254;
+        public static final double WHEEL_BASE_LENGTH = 24.75;
+        public static final double WHEEL_BASE_WIDTH = 12.75;
 
-        public static final double SPEED = 40;
+        public static final double SPEED = 50;
         public static final double TURN_RATE = 50;
     }
 
@@ -77,7 +93,7 @@ public class RobotMap {
 
 
     public static class Elevator {
-		public final static int elevator1 = 9; // CAN ID
+		public final static int elevator1 = 11; // CAN ID
         public final static int elevator2 = 10; // CAN ID
 
         public final static double PEAK_LIMIT = 15; // Amps
@@ -95,7 +111,7 @@ public class RobotMap {
     }
     
     public static class Hatch {
-        public final static int hatchMotor = 11;
+        public final static int hatchMotor = 13;
         public final static int INTAKE_PISTON = 2;
         public final static int EXTEND = 4;
         public final static int RETRACT = 3;
