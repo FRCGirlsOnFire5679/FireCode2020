@@ -9,6 +9,7 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 // import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import com.revrobotics.CANEncoder;
+import com.revrobotics.CANSparkMax.IdleMode;
 
 import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.PIDOutput;
@@ -20,8 +21,7 @@ import edu.wpi.first.wpilibj.PIDSourceType;
  */
 public class SwerveModule implements PIDSource, PIDOutput {
     private PIDController steerPID;
-    public WPI_TalonSRX driveController;
-    public CANEncoder encoder;
+    public WPI_TalonSRX driveController;    
     public WPI_TalonSRX steerController;
     private AbsoluteEncoder steerEncoder;
     public double positionX, positionY;
@@ -121,7 +121,8 @@ public class SwerveModule implements PIDSource, PIDOutput {
     }
 
     public double getDistance() {
-        return 0;//TODO: Fix to work with talon encoder.getPosition() * distPerRev - distZero;
+        
+        return driveController.getSelectedSensorPosition() * distPerRev - distZero;
     }
 
     public double pidGet() {

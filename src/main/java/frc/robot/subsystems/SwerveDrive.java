@@ -42,7 +42,7 @@ public class SwerveDrive extends Subsystem implements PIDSource, PIDOutput {
     private double pivX, pivY, transAngle, mpangle, gyroangle, speed = RobotMap.SwerveDrive.SPEED,
             turnRate = RobotMap.SwerveDrive.TURN_RATE;
     private boolean drivingField = true, visionOn = false;
-
+    
     public SwerveDrive() {
         enable();
     }
