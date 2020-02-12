@@ -1,12 +1,7 @@
 package frc.robot;
 
 public class RobotMap {
-    public static double acc = 50;
-    public static double vCruise = 60;
-    public static int DEFAULT_TIMEOUT = 30; // milliseconds
-
     public static class SwerveDrive {
-        // These numbers control the Swerve PI
         // These numbers control the Swerve PID
         // start with p, i, d at 0, and tune as needed
         // slowly work p value up until it oscillates about 3 times and then stops
@@ -24,9 +19,9 @@ public class RobotMap {
         public static final double SWERVE_STEER_I = 0;
 
         // trickiest - directly adjusts p value - if p value is saw wave, d makes it sin wave
-        // controll oscillations, keep from overshooting. If too high, it will keep you from
+        // control oscillations, keep from overshooting. If too high, it will keep you from
         // turning at all. This is the adjustment value after p to control oscillation
-        public static final double SWERVE_STEER_D = 0.075;
+        public static final double SWERVE_STEER_D = .075;
         public static final double SWERVE_STEER_CAP = 1;
 
         // Swerve Motor Controller CAN ID's
@@ -46,10 +41,18 @@ public class RobotMap {
         public static final int BR_ENCODER = 3;
         
         //Encoder offsets for real robot
-        public final static double FL_ENC_OFFSET = 238;
-        public final static double FR_ENC_OFFSET = 348;
-        public final static double BL_ENC_OFFSET = 235;
-        public final static double BR_ENC_OFFSET = 159;
+        public final static double BL_ENC_OFFSET = 0;
+        public final static double BR_ENC_OFFSET = 0;
+        public final static double FL_ENC_OFFSET = 0;
+        public final static double FR_ENC_OFFSET = 0;
+        // public final static double FL_ENC_OFFSET = 238;
+        // public final static double FR_ENC_OFFSET = 348;
+        // public final static double BL_ENC_OFFSET = 235;
+        // public final static double BR_ENC_OFFSET = 159;
+        // public final static double FL_ENC_OFFSET = 59;
+        // public final static double FR_ENC_OFFSET = 172;
+        // public final static double BL_ENC_OFFSET = 61;
+        // public final static double BR_ENC_OFFSET = 338;
         // public final static double FL_ENC_OFFSET = 275.5+324+42.8;
         // public final static double FR_ENC_OFFSET = 165+3.25;
         // public final static double BL_ENC_OFFSET = 142+4.5;
