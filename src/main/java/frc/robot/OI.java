@@ -3,14 +3,9 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import frc.robot.util.buttons.*;
-// import frc.robot.commands.auto.*;
 import frc.robot.commands.cargo.*;
-// import frc.robot.commands.climb.*;
 import frc.robot.commands.hatch.*;
 import frc.robot.commands.swerve.*;
-// import frc.robot.commands.elevator.*;
-import frc.robot.RobotMap;
-// import frc.robot.RobotMap.Elevator;
 
 public class OI {
     public static Joystick joy1 = new Joystick(0);
@@ -53,30 +48,10 @@ public class OI {
         visionFoward.whileHeld(new SwerveDriveVisionForwards());
         visionBack.whileHeld(new SwerveDriveVisionReverse());
         shortPiston.toggleWhenPressed(new CargoShortExtend());
-        // runWheels.whenActive(new RunWheels());
-        // stopArm.whileHeld(new ArmStop());
-
-        // prepare3.whenPressed(new ClimbPrepare3());
-        // climb.whenPressed(new Climb3());
-        // retract.whenPressed(new FinishClimb());
 
         hatchGrab.whenPressed(new HatchPistonGrab());
         hatchPlace.whenPressed(new HatchPistonPlace());
-        // hatchExtend.toggleWhenPressed(command);
         cargoIntake.whileHeld(new CargoIn());
         cargoShoot.whileHeld(new CargoOut());
-        if (Robot.hatch.hatchExtended) {
-            // hatch1.whenPressed(new ElevatorMM(Elevator.HATCH_1ROCKET));
-        }
-        else {
-            // hatch1.whenPressed(new ElevatorMM(0));
-        }
-        // hatch2.whenPressed(new ElevatorMM(Elevator.HATCH_2ROCKET));
-        // hatch3.whenPressed(new ElevatorMM(Elevator.HATCH_3ROCKET));
-        // cargo1.whenPressed(new ElevatorMM(Elevator.CARGO_1ROCKET));
-        // cargo2.whenPressed(new ElevatorMM(Elevator.CARGO_2ROCKET));
-        // cargo3.whenPressed(new ElevatorMM(Elevator.CARGO_3ROCKET));
-        // cargoShip.whenPressed(new ElevatorMM(Elevator.CARGO_SHIP));
-        // resetEncoder.whenPressed(new ElevatorReset());
     }
 }

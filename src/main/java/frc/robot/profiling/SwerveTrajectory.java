@@ -31,14 +31,14 @@ public class SwerveTrajectory extends Trajectory {
                 }
             }
         }
-        trajectory.gyroProfile[0] = new TrapezoidProfile(trajectory.waypoints[0].rotation,
-                trajectory.waypoints[1].rotation, 0, 0, trajectory.angularVelocity, trajectory.angularAcc);
+        trajectory.gyroProfile[0] = new TrapezoidProfile(trajectory.waypoints[0].rotationRate,
+                trajectory.waypoints[1].rotationRate, 0, 0, trajectory.angularVelocity, trajectory.angularAcc);
         for (int i = 1; i < waypoints.length - 1; i++) {
             double startPos = trajectory.gyroProfile[i - 1]
                     .currentP(trajectory.waypointTime[i] - trajectory.waypointTime[i - 1]);
             double startV = trajectory.gyroProfile[i - 1]
                     .currentV(trajectory.waypointTime[i] - trajectory.waypointTime[i - 1]);
-            double endPos = trajectory.waypoints[i + 1].rotation;
+            double endPos = trajectory.waypoints[i + 1].rotationRate;
             trajectory.gyroProfile[i] = new TrapezoidProfile(startPos, endPos, startV, 0, trajectory.angularVelocity,
                     trajectory.angularAcc);
         }
