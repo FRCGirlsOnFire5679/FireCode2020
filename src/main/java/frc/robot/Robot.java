@@ -46,7 +46,7 @@ public class Robot extends TimedRobot {
         succ = new Compressor();
         m_oi = new OI();
         autoChooser = new SendableChooser<Command>();
-        autoChooser.setDefaultOption("Driver Control", new DoNothing());
+        autoChooser.setDefaultOption("Do Nothing", new DoNothing());
         autoChooser.addOption("Basic Forward", new BasicForward());
         SmartDashboard.putData("Autonomous Chooser", autoChooser);
     }
