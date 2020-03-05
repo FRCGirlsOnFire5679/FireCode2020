@@ -187,7 +187,7 @@ public class SwerveDrive extends Subsystem implements PIDSource, PIDOutput {
      * 
      * @param translationX relative speed in left/right direction (-1 to 1)
      * @param translationY relative speed in forward/reverse direction (-1 to 1)
-     * @param rotation     relative rate of rotation around pivot point (-1 to 1)
+     * @param rotationRate     relative rate of rotation around pivot point (-1 to 1)
      *                     positive is clockwise
      */
 
