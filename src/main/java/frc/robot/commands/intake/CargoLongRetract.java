@@ -6,12 +6,12 @@ import edu.wpi.first.wpilibj.command.Command;
 public class CargoLongRetract extends Command {
 
     public CargoLongRetract() {
-        requires(Robot.cargo);
+        requires(Robot.intake);
     }
 
     @Override
     public void execute() {
-        Robot.cargo.retractLong();
+        Robot.intake.retractLong();
     }
 
     @Override

@@ -17,8 +17,7 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class Robot extends TimedRobot {
-    public static Hatch hatch;
-    public static Cargo cargo;
+    public static Intake intake;
     public static Gyro navxGyro;
     public static SwerveDrive swerve;
     public static Compressor succ;
@@ -38,10 +37,9 @@ public class Robot extends TimedRobot {
         LiveWindow.disableAllTelemetry();
         navxGyro = new Gyro();
         swerve = new SwerveDrive();
-        hatch = new Hatch();
         path = new PathTracking();
         follower = new PathFollower();
-        cargo = new Cargo();
+        intake = new Intake();
         led = new Spark(0);
         succ = new Compressor();
         m_oi = new OI();
@@ -63,15 +61,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putBoolean("tapeval", tape);
         swerve.smartDash();
         path.update();
-        if (hatch.hatchExtended && hatch.hatchOpen) {
-            led.set(-0.23);
-        } else if (hatch.hatchExtended && !hatch.hatchOpen) {
-            led.set(-0.25);
-        } else if (hatch.hatchOpen) {
-            led.set(-0.21);
-        } else {
-            led.set(-0.45);
-        }
+
     }
 
     @Override

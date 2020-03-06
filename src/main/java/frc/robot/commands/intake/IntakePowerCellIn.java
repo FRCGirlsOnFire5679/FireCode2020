@@ -1,29 +1,29 @@
-package frc.robot.commands.cargo;
+package frc.robot.commands.intake;
 
 import frc.robot.OI;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class CargoHandlerOut extends Command {
+public class IntakePowerCellIn extends Command {
     
     public double y;
-    public CargoHandlerOut() {
+    public IntakePowerCellIn() {
     }
 
     @Override
     public void execute() {
-        y = OI.joy2.getRawAxis(RobotMap.Controller.RT);
-        Robot.cargo.rollHandler(-y);
+       y = OI.joy2.getRawAxis(RobotMap.Controller.A);
+       Robot.intake.pull(y);
+    }
+    @Override
+    public boolean isFinished() {
+        return Math.abs(y)<0.1;
     }
 
     @Override
-    public boolean isFinished() {
-        return Math.abs(y) < 0.1;
-    }
-    
     public void end() {
-        Robot.cargo.rollHandler(0);
+        Robot.intake.pull(0);
     }
 
     @Override

@@ -6,13 +6,13 @@ import edu.wpi.first.wpilibj.command.Command;
 public class CargoLongExtend extends Command {
 
     public CargoLongExtend() {
-        requires(Robot.cargo);
+        requires(Robot.intake);
     }
 
     @Override
     public void execute() {
         // if (Robot.elevator.clearForCargo() && !Robot.hatch.hatchExtended)
-            Robot.cargo.extendLong();
+            Robot.intake.extendLong();
     }
 
     @Override

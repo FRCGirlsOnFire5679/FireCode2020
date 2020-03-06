@@ -1,29 +1,25 @@
 package frc.robot.commands.cargo;
 
-import frc.robot.OI;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class CargoHandlerIn extends Command {
+public class CargoShortExtend extends Command {
     
-    public double y;
-    public CargoHandlerIn() {
+    public CargoShortExtend() {
     }
 
     @Override
     public void execute() {
-       y = OI.joy2.getRawAxis(RobotMap.Controller.LT);
-       Robot.cargo.rollHandler(y);
-    }
-    @Override
-    public boolean isFinished() {
-        return Math.abs(y)<0.1;
+        Robot.intake.extendShort();
     }
 
     @Override
+    public boolean isFinished() {
+        return false;
+    }
+    @Override
     public void end() {
-        Robot.cargo.rollHandler(0);
+        Robot.intake.retractShort();
     }
 
     @Override
