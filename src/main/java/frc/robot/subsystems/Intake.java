@@ -1,7 +1,7 @@
 package frc.robot.subsystems;
 
 import frc.robot.RobotMap;
-import frc.robot.commands.cargo.CargoWithJoy;
+// import frc.robot.commands.cargo.CargoWithJoy;
 
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
@@ -37,7 +37,7 @@ public class Intake extends Subsystem {
 
     @Override
     public void initDefaultCommand() {
-        setDefaultCommand(new IntakeWithJoy());
+        // setDefaultCommand(new IntakeWithJoy());
     }
     public void push(double speed) {
         intakemotor.set(-speed);

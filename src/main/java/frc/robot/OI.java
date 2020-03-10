@@ -3,8 +3,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import frc.robot.util.buttons.*;
-import frc.robot.commands.cargo.*;
-import frc.robot.commands.hatch.*;
+// import frc.robot.commands.cargo.*;
+// import frc.robot.commands.hatch.*;
 import frc.robot.commands.swerve.*;
 
 public class OI {
@@ -47,11 +47,11 @@ public class OI {
         gyroReset.whenPressed(new SwerveGyroReset());
         visionFoward.whileHeld(new SwerveDriveVisionForwards());
         visionBack.whileHeld(new SwerveDriveVisionReverse());
-        shortPiston.toggleWhenPressed(new CargoShortExtend());
+        // shortPiston.toggleWhenPressed(new CargoShortExtend());
 
-        hatchGrab.whenPressed(new HatchPistonGrab());
-        hatchPlace.whenPressed(new HatchPistonPlace());
-        cargoIntake.whileHeld(new CargoIn());
-        cargoShoot.whileHeld(new CargoOut());
+        // hatchGrab.whenPressed(new HatchPistonGrab());
+        // hatchPlace.whenPressed(new HatchPistonPlace());
+        // cargoIntake.whileHeld(new CargoIn());
+        // cargoShoot.whileHeld(new CargoOut());
     }
 }

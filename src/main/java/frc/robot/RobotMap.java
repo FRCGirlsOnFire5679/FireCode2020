@@ -41,10 +41,10 @@ public class RobotMap {
         public static final int BR_ENCODER = 3;
         
         //Encoder offsets for real robot
-        public final static double BL_ENC_OFFSET = 245;
-        public final static double BR_ENC_OFFSET = 188;
-        public final static double FL_ENC_OFFSET = 178;
-        public final static double FR_ENC_OFFSET = 110;
+        public final static double BL_ENC_OFFSET = 248;
+        public final static double BR_ENC_OFFSET = 189;
+        public final static double FL_ENC_OFFSET = 177;
+        public final static double FR_ENC_OFFSET = 112;
 
         public static final boolean ENCODERS_REVERSED = false;
 
