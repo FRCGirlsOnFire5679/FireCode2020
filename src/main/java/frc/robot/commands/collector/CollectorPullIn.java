@@ -11,7 +11,7 @@ public class CollectorPullIn extends Command {
 
     @Override
     public void execute() {
-        Robot.collector.pull(2); //TODO: determine speed of pull
+        Robot.collector.pull(0.2); //TODO: determine speed of pull
     }
 
     @Override
@@ -21,6 +21,7 @@ public class CollectorPullIn extends Command {
 
     @Override
     public void end() {
+        Robot.collector.pull(0);
         // TODO: do we need to do anything here?
     }
 }
