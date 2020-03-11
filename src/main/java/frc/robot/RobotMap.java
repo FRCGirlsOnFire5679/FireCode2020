@@ -82,47 +82,7 @@ public class RobotMap {
 
     }
 
-
-    public static class Elevator {
-		public final static int elevator1 = 11; // CAN ID
-        public final static int elevator2 = 10; // CAN ID
-
-        public final static double PEAK_LIMIT = 15; // Amps
-        public final static double PEAK_DURATION = 50; // milliseconds
-        public final static double CONTINUOUS_LIMIT = 10; // Amps
-        
-        public static int START_POSITION = 14038;
-        public final static int CARGO_1ROCKET = 16380;
-        public final static int CARGO_2ROCKET = 38844;
-        public final static int CARGO_3ROCKET = 62424;
-        public final static int CARGO_SHIP = 25000;
-        public final static int HATCH_1ROCKET = 1500;
-        public final static int HATCH_2ROCKET = 28731;
-        public final static int HATCH_3ROCKET = 54186;
+    public static class CollectorMotor {
+        public final static int C_MOTOR = 10; //TODO: Confirm this as correct
     }
-    
-    public static class Hatch {
-        public final static int hatchMotor = 13;
-        public final static int INTAKE_PISTON = 2;
-        public final static int EXTEND = 4;
-        public final static int RETRACT = 3;
-    }
-
-    public static class Cargo {
-        public final static int L_MOTOR = 21;
-        public final static int R_MOTOR = 22;
-        public final static int MOTOR = 23;
-    }
-
-    public static class ClimbArm {
-        public final static int ARM_MOTOR = 31;
-        public final static int ARM_LEVEL2 = -205;
-        public final static int ARM_LEVEL3 = -170;
-    }
-    public static class ClimbStilt {
-        public final static int ROLL_WHEELS = 25;
-        public final static int STILT_MOTOR = 30;
-        public final static int STILT_LEVEL2 = -70;
-        public final static int STILT_LEVEL3 = -175;
-    }
-}
+ }

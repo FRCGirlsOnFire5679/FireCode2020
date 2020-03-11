@@ -17,9 +17,9 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class Robot extends TimedRobot {
-    public static Intake intake;
     public static Gyro navxGyro;
     public static SwerveDrive swerve;
+    public static Collector collector;
     public static Compressor succ;
     public static PathTracking path;
     public static PathFollower follower;
@@ -37,9 +37,9 @@ public class Robot extends TimedRobot {
         LiveWindow.disableAllTelemetry();
         navxGyro = new Gyro();
         swerve = new SwerveDrive();
+        collector = new Collector();
         path = new PathTracking();
         follower = new PathFollower();
-        intake = new Intake();
         led = new Spark(0);
         succ = new Compressor();
         m_oi = new OI();
